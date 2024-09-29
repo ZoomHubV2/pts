@@ -3,57 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discord Bot Invite</title>
+    <title>MYSTXRY_JXKER</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #7289DA;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #2C2F33;
-        }
-        p {
-            color: #99AAB5;
-            margin-bottom: 1.5rem;
-        }
-        .button {
-            display: inline-block;
-            background-color: #43B581;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        .button:hover {
-            background-color: #3CA374;
+            background-color: #000000;
+            color: #ffffff;
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1>Invite Our Discord Bot</h1>
-        <p>Click the button below to add our bot to your Discord server!</p>
-        <a href="https://discord.com/oauth2/authorize?client_id=1243827594630135849&permissions=8&integration_type=0&scope=bot" class="button">Add to Discord</a>
-    </div>
-    <script>
-        // Redirect after 5 seconds if the button isn't clicked
-        setTimeout(function() {
-            window.location.href = "https://discord.com/oauth2/authorize?client_id=1243827594630135849&scope=bot%20applications.commands&permissions=0";
-        }, 5000);
-    </script>
+<body class="bg-black text-white">
+    <header class="p-4">
+        <nav class="flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="/images/logo.png" alt="MYSTXRY_JXKER Logo" class="w-8 h-8 rounded-full mr-2">
+                <img src="images/mystxry_jxker_text.png" alt="MYSTXRY_JXKER Text" class="h-10">
+            </div>
+            <ul class="flex space-x-4 text-sm">
+                <li><a href="#" class="hover:text-gray-300">Home</a></li>
+                <li><a href="#" class="hover:text-gray-300">Reels</a></li>
+                <li><a href="#" class="hover:text-gray-300">Admins</a></li>
+                <li><a href="#" class="hover:text-gray-300">Contribute</a></li>
+                <li><a href="#" class="hover:text-gray-300">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container mx-auto mt-16 px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="md:w-1/2">
+                <h1 class="text-5xl font-bold mb-4">Introducing<br>the Mystery Jokers</h1>
+                <p class="mb-4 text-gray-400 text-sm">Welcome to the ultimate meme destination! Prepare to be swept away by a captivating collection of the internet's most hilarious and viral content. Immerse yourself in a world of laughter</p>
+                <button class="bg-white text-black px-6 py-2 rounded text-sm hover:bg-gray-200">Explore Now</button>
+            </div>
+            <div class="md:w-1/2 mt-8 md:mt-0 flex justify-end">
+                <img src="images/joker_face.png" alt="Joker character" class="rounded-lg w-4/5 max-w-sm">
+            </div>
+        </div>
+    </main>
 </body>
 </html>
