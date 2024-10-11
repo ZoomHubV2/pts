@@ -31,32 +31,32 @@
 
         .central-image {
             position: absolute;
-            top: 50%; /* Center vertically */
-            left: 50%; /* Center horizontally */
+            top: 65%; /* Adjusted for vertical positioning */
+            left: 90%; /* Adjusted for horizontal positioning */
             transform: translate(-50%, -50%);
             border-radius: 15px;
-            width: 200px; /* Adjust for smaller screens */
-            height: 200px;
+            width: 300px; /* Increased size */
+            height: 300px; /* Increased size */
             border: 2px solid white;
             object-fit: cover;
             box-shadow: 0 0 15px #00b4ff;
-            transition: transform 0.3s;
+            transition: transform 0.3s; /* Add transition for hover effect */
         }
 
         /* Hover effect */
         .central-image:hover {
-            transform: translate(-50%, -50%) scale(1.05);
+            transform: translate(-50%, -50%) scale(1.05); /* Scale up on hover */
         }
 
         /* Orbiting images */
         .orbiting-image {
             position: absolute;
             top: 50%;
-            left: 50%;
-            transform-origin: -150px -150px;
+            left: 80%;
+            transform-origin: 0 0;
             animation: orbit 10s infinite linear;
-            width: 70px;
-            height: 90px;
+            width: 80px;
+            height: 100px;
             object-fit: cover;
             border-radius: 10px;
             border: 2px solid white;
@@ -68,41 +68,18 @@
         .image-3 { animation-delay: 4s; }
         .image-4 { animation-delay: 6s; }
         .image-5 { animation-delay: 8s; }
-
-        /* Mobile Adjustments */
-        @media (max-width: 640px) {
-            .orbit-container {
-                width: 250px;
-                height: 250px;
-            }
-
-            .central-image {
-                width: 150px;
-                height: 150px;
-            }
-
-            .orbiting-image {
-                width: 50px;
-                height: 70px;
-                transform-origin: -100px -100px;
-            }
-
-            header nav ul {
-                display: none; /* Hide menu items on smaller screens */
-            }
-        }
     </style>
 </head>
 <body class="bg-black text-white">
     <header class="p-4">
         <nav class="flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <img src="/images/logo.png" alt="MYSTXRY_JXKER Logo" class="w-8 h-8 rounded-full">
-                <img src="images/mystxry_jxker_text.png" alt="MYSTXRY_JXKER Text" class="h-6 md:h-10">
+            <div class="flex items-center">
+                <img src="/images/logo.png" alt="MYSTXRY_JXKER Logo" class="w-8 h-8 rounded-full mr-2">
+                <img src="images/mystxry_jxker_text.png" alt="MYSTXRY_JXKER Text" class="h-10">
             </div>
-            <ul class="hidden md:flex space-x-4 text-sm">
+            <ul class="flex space-x-4 text-sm">
                 <li><a href="#" class="hover:text-gray-300">Home</a></li>
-                <li><a href="#" class="hover:text-gray-300">Reels</a></li>
+                <li><a href="reels.html" class="hover:text-gray-300">Reels</a></li>
                 <li><a href="#" class="hover:text-gray-300">Admins</a></li>
                 <li><a href="#" class="hover:text-gray-300">Contribute</a></li>
                 <li><a href="#" class="hover:text-gray-300">Contact</a></li>
@@ -110,16 +87,16 @@
         </nav>
     </header>
 
-    <main class="container mx-auto mt-8 px-4">
+    <main class="container mx-auto mt-16 px-4">
         <div class="flex flex-col md:flex-row justify-between items-center">
-            <div class="md:w-1/2 text-center md:text-left">
-                <h1 class="text-3xl md:text-5xl font-bold mb-4">Introducing<br>the Mystery Jokers</h1>
-                <p class="mb-4 text-gray-400 text-sm">Welcome to the ultimate meme destination! Prepare to be swept away by a captivating collection of the internet's most hilarious and viral content. Immerse yourself in a world of laughter.</p>
-                <button class="bg-white text-black px-4 py-2 rounded text-sm hover:bg-gray-200">Explore Now</button>
+            <div class="md:w-1/2">
+                <h1 class="text-5xl font-bold mb-4">Introducing<br>the Mystery Jokers</h1>
+                <p class="mb-4 text-gray-400 text-sm">Welcome to the ultimate meme destination! Prepare to be swept away by a captivating collection of the internet's most hilarious and viral content. Immerse yourself in a world of laughter</p>
+                <button class="bg-white text-black px-6 py-2 rounded text-sm hover:bg-gray-200">Explore Now</button>
             </div>
 
             <!-- Orbiting Images Section -->
-            <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
+            <div class="md:w-1/2 mt-8 md:mt-0 flex justify-end">
                 <div class="orbit-container">
                     <!-- Clickable Central Image -->
                     <a href="https://www.instagram.com/mystery___joker/" target="_blank">
@@ -139,7 +116,7 @@
                     <a href="https://www.instagram.com/reel/C6Atbpfr2Jv/?igsh=ZjNzd2tieW95MmM1" target="_blank">
                         <img src="/images/image4.jpeg" alt="Orbiting Image 4" class="orbiting-image image-4">
                     </a>
-                    <a href="https://www.instagram.com/reel/C2XAjb4PB4L/?igsh=MWxqbXZpZ3RjczJxeA==" target="_blank">
+                    <a href="https://www.instagram.com/reel/C_VdM3NhDlz/?igsh=MWdwZHZvZTlzMW10aw==" target="_blank">
                         <img src="/images/image5.jpeg" alt="Orbiting Image 5" class="orbiting-image image-5">
                     </a>
                 </div>
