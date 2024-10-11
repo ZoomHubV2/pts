@@ -24,39 +24,39 @@
         /* Central Image Styling */
         .orbit-container {
             position: relative;
-            width: 300px;
-            height: 300px;
+            width: 250px; /* Adjust for smaller screens */
+            height: 250px;
             margin: 0 auto;
         }
 
         .central-image {
             position: absolute;
-            top: 65%; /* Adjusted for vertical positioning */
-            left: 90%; /* Adjusted for horizontal positioning */
+            top: 50%; /* Center */
+            left: 50%; /* Center */
             transform: translate(-50%, -50%);
             border-radius: 15px;
-            width: 300px; /* Increased size */
-            height: 300px; /* Increased size */
+            width: 200px; /* Size adjustments */
+            height: 200px;
             border: 2px solid white;
             object-fit: cover;
             box-shadow: 0 0 15px #00b4ff;
-            transition: transform 0.3s; /* Add transition for hover effect */
+            transition: transform 0.3s;
         }
 
         /* Hover effect */
         .central-image:hover {
-            transform: translate(-50%, -50%) scale(1.05); /* Scale up on hover */
+            transform: translate(-50%, -50%) scale(1.05);
         }
 
         /* Orbiting images */
         .orbiting-image {
             position: absolute;
             top: 50%;
-            left: 80%;
-            transform-origin: 0 0;
+            left: 50%;
+            transform-origin: -150px -150px; /* Adjust orbit for mobile */
             animation: orbit 10s infinite linear;
-            width: 80px;
-            height: 100px;
+            width: 70px; /* Smaller on mobile */
+            height: 90px;
             object-fit: cover;
             border-radius: 10px;
             border: 2px solid white;
@@ -69,6 +69,24 @@
         .image-4 { animation-delay: 6s; }
         .image-5 { animation-delay: 8s; }
 
+        /* Mobile Adjustments */
+        @media (max-width: 640px) {
+            .orbit-container {
+                width: 200px; /* Smaller orbit container */
+                height: 200px;
+            }
+
+            .central-image {
+                width: 150px; /* Smaller central image */
+                height: 150px;
+            }
+
+            .orbiting-image {
+                width: 60px; /* Smaller orbiting images */
+                height: 80px;
+                transform-origin: -120px -120px; /* Smaller orbit radius */
+            }
+        }
     </style>
 </head>
 <body class="bg-black text-white">
@@ -90,9 +108,9 @@
 
     <main class="container mx-auto mt-16 px-4">
         <div class="flex flex-col md:flex-row justify-between items-center">
-            <div class="md:w-1/2">
-                <h1 class="text-5xl font-bold mb-4">Introducing<br>the Mystery Jokers</h1>
-                <p class="mb-4 text-gray-400 text-sm">Welcome to the ultimate meme destination! Prepare to be swept away by a captivating collection of the internet's most hilarious and viral content. Immerse yourself in a world of laughter</p>
+            <div class="md:w-1/2 text-center md:text-left">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Introducing<br>the Mystery Jokers</h1>
+                <p class="mb-4 text-gray-400 text-sm">Welcome to the ultimate meme destination! Prepare to be swept away by a captivating collection of the internet's most hilarious and viral content. Immerse yourself in a world of laughter.</p>
                 <button class="bg-white text-black px-6 py-2 rounded text-sm hover:bg-gray-200">Explore Now</button>
             </div>
 
