@@ -10,6 +10,65 @@
             background-color: #000000;
             color: #ffffff;
         }
+
+        /* Orbit Animation */
+        @keyframes orbit {
+            0% {
+                transform: rotate(0deg) translateX(200px) rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg) translateX(200px) rotate(-360deg);
+            }
+        }
+
+        /* Central Image Styling */
+        .orbit-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+        }
+
+        .central-image {
+            position: absolute;
+            top: 65%; /* Adjusted for vertical positioning */
+            left: 90%; /* Adjusted for horizontal positioning */
+            transform: translate(-50%, -50%);
+            border-radius: 15px;
+            width: 300px; /* Increased size */
+            height: 300px; /* Increased size */
+            border: 2px solid white;
+            object-fit: cover;
+            box-shadow: 0 0 15px #00b4ff;
+            transition: transform 0.3s; /* Add transition for hover effect */
+        }
+
+        /* Hover effect */
+        .central-image:hover {
+            transform: translate(-50%, -50%) scale(1.05); /* Scale up on hover */
+        }
+
+        /* Orbiting images */
+        .orbiting-image {
+            position: absolute;
+            top: 50%;
+            left: 80%;
+            transform-origin: 0 0;
+            animation: orbit 10s infinite linear;
+            width: 80px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid white;
+        }
+
+        /* Individual Image Offsets */
+        .image-1 { animation-delay: 0s; }
+        .image-2 { animation-delay: 2s; }
+        .image-3 { animation-delay: 4s; }
+        .image-4 { animation-delay: 6s; }
+        .image-5 { animation-delay: 8s; }
+
     </style>
 </head>
 <body class="bg-black text-white">
@@ -28,6 +87,7 @@
             </ul>
         </nav>
     </header>
+
     <main class="container mx-auto mt-16 px-4">
         <div class="flex flex-col md:flex-row justify-between items-center">
             <div class="md:w-1/2">
@@ -35,8 +95,32 @@
                 <p class="mb-4 text-gray-400 text-sm">Welcome to the ultimate meme destination! Prepare to be swept away by a captivating collection of the internet's most hilarious and viral content. Immerse yourself in a world of laughter</p>
                 <button class="bg-white text-black px-6 py-2 rounded text-sm hover:bg-gray-200">Explore Now</button>
             </div>
+
+            <!-- Orbiting Images Section -->
             <div class="md:w-1/2 mt-8 md:mt-0 flex justify-end">
-                <img src="images/joker_face.png" alt="Joker character" class="rounded-lg w-4/5 max-w-sm">
+                <div class="orbit-container">
+                    <!-- Clickable Central Image -->
+                    <a href="https://www.instagram.com/mystery___joker/" target="_blank">
+                        <img src="images/joker_face.png" alt="Joker character" class="central-image rounded-lg">
+                    </a>
+
+                    <!-- Orbiting Vertical Rectangles with Links -->
+                    <a href="https://www.instagram.com/reel/C01cNKVPAU1/?igsh=MXdjd21pb3RlNm82Zw==" target="_blank">
+                        <img src="/images/image1.jpeg" alt="Orbiting Image 1" class="orbiting-image image-1">
+                    </a>
+                    <a href="https://www.instagram.com/reel/C09QT8rPV_j/?igsh=bmtibDU4NHFkNnc5" target="_blank">
+                        <img src="/images/image2.jpeg" alt="Orbiting Image 2" class="orbiting-image image-2">
+                    </a>
+                    <a href="https://www.instagram.com/reel/C2Z7so1P4Ye/?igsh=YmU1bTlhZHNzZmdp" target="_blank">
+                        <img src="/images/image3.jpeg" alt="Orbiting Image 3" class="orbiting-image image-3">
+                    </a>
+                    <a href="https://www.instagram.com/reel/C6Atbpfr2Jv/?igsh=ZjNzd2tieW95MmM1" target="_blank">
+                        <img src="/images/image4.jpeg" alt="Orbiting Image 4" class="orbiting-image image-4">
+                    </a>
+                    <a href="https://www.instagram.com/reel/C2XAjb4PB4L/?igsh=MWxqbXZpZ3RjczJxeA==" target="_blank">
+                        <img src="/images/image5.jpeg" alt="Orbiting Image 5" class="orbiting-image image-5">
+                    </a>
+                </div>
             </div>
         </div>
     </main>
