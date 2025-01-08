@@ -31,24 +31,22 @@
 
         .central-image {
             position: absolute;
-            top: 65%; /* Adjusted for vertical positioning */
-            left: 90%; /* Adjusted for horizontal positioning */
+            top: 65%;
+            left: 90%;
             transform: translate(-50%, -50%);
             border-radius: 15px;
-            width: 300px; /* Increased size */
-            height: 300px; /* Increased size */
+            width: 300px;
+            height: 300px;
             border: 2px solid white;
             object-fit: cover;
             box-shadow: 0 0 15px #00b4ff;
-            transition: transform 0.3s; /* Add transition for hover effect */
+            transition: transform 0.3s;
         }
 
-        /* Hover effect */
         .central-image:hover {
-            transform: translate(-50%, -50%) scale(1.05); /* Scale up on hover */
+            transform: translate(-50%, -50%) scale(1.05);
         }
 
-        /* Orbiting images */
         .orbiting-image {
             position: absolute;
             top: 50%;
@@ -62,12 +60,32 @@
             border: 2px solid white;
         }
 
-        /* Individual Image Offsets */
         .image-1 { animation-delay: 0s; }
         .image-2 { animation-delay: 2s; }
         .image-3 { animation-delay: 4s; }
         .image-4 { animation-delay: 6s; }
         .image-5 { animation-delay: 8s; }
+
+        /* Offers Section */
+        #offers {
+            margin-top: 100px;
+            padding: 20px;
+        }
+
+        .offer-box {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #00b4ff;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 180, 255, 0.5);
+            max-width: 600px;
+            margin: 20px auto;
+            transition: transform 0.3s;
+        }
+
+        .offer-box:hover {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body class="bg-black text-white">
@@ -79,9 +97,9 @@
             </div>
             <ul class="flex space-x-4 text-sm">
                 <li><a href="#" class="hover:text-gray-300">Home</a></li>
+                <li><a href="#offers" class="hover:text-gray-300">Offers</a></li>
                 <li><a href="reels.html" class="hover:text-gray-300">Reels</a></li>
                 <li><a href="#" class="hover:text-gray-300">Admins</a></li>
-                <li><a href="#" class="hover:text-gray-300">Contribute</a></li>
                 <li><a href="#" class="hover:text-gray-300">Contact</a></li>
             </ul>
         </nav>
@@ -95,15 +113,12 @@
                 <button class="bg-white text-black px-6 py-2 rounded text-sm hover:bg-gray-200">Explore Now</button>
             </div>
 
-            <!-- Orbiting Images Section -->
             <div class="md:w-1/2 mt-8 md:mt-0 flex justify-end">
                 <div class="orbit-container">
-                    <!-- Clickable Central Image -->
                     <a href="https://www.instagram.com/mystery___joker/" target="_blank">
                         <img src="images/joker_face.png" alt="Joker character" class="central-image rounded-lg">
                     </a>
 
-                    <!-- Orbiting Vertical Rectangles with Links -->
                     <a href="https://www.instagram.com/reel/C01cNKVPAU1/?igsh=MXdjd21pb3RlNm82Zw==" target="_blank">
                         <img src="/images/image1.jpeg" alt="Orbiting Image 1" class="orbiting-image image-1">
                     </a>
@@ -122,6 +137,38 @@
                 </div>
             </div>
         </div>
+
+        <!-- Offers Section -->
+        <section id="offers" class="text-center">
+            <h2 class="text-3xl font-bold mb-4">Exclusive Offers</h2>
+
+            <div class="offer-box">
+                <h3 class="text-xl font-semibold">Main Offer</h3>
+                <p class="text-gray-300 mb-2">Get 6 reels with a total of 500k views for just ₹70—Money Back Guarantee if it doesn't work!</p>
+                <p class="text-gray-400">Take your brand or page to the next level with engaging, high-quality meme-based reels crafted by an experienced creator.</p>
+            </div>
+
+            <div class="offer-box">
+                <h3 class="text-xl font-semibold">Personalized Reel Packages</h3>
+                <ul class="text-gray-300 text-sm list-disc list-inside">
+                    <li>Basic: 6 reels, 500k views – ₹70</li>
+                    <li>Premium: 10 reels, 1M views – ₹150</li>
+                </ul>
+                <p class="text-gray-400">Subscription model: 20 reels/month for ₹250, with an estimated total of 2M views. Partial refunds provided for unmet targets.</p>
+            </div>
+
+            <div class="offer-box">
+                <h3 class="text-xl font-semibold">One-Time Purchase</h3>
+                <p class="text-gray-300">Access the entire library and enjoy new templates added daily.</p>
+            </div>
+        </section>
     </main>
+
+    <script>
+        document.querySelector('a[href="#offers"]').addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector('#offers').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
