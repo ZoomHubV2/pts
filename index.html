@@ -21,11 +21,6 @@
             }
         }
 
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
         /* Central Image Styling */
         .orbit-container {
             position: relative;
@@ -52,7 +47,6 @@
             transform: translate(-50%, -50%) scale(1.05);
         }
 
-        /* Orbiting images */
         .orbiting-image {
             position: absolute;
             top: 50%;
@@ -72,22 +66,57 @@
         .image-4 { animation-delay: 6s; }
         .image-5 { animation-delay: 8s; }
 
-        /* Floating box animation */
-        .floating-box {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-            animation: float 3s infinite ease-in-out;
+        /* Offers Section Styling */
+        .offers-container {
+            margin: 0 auto;
+            padding: 2rem;
+            max-width: 800px;
+            text-align: center;
         }
 
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
+        .offers-container h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #00b4ff;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .offers-container p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .offer-card {
+            background: #1a1a1a;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 180, 255, 0.5);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: left;
+            animation: zoomIn 1.5s ease-in-out;
+        }
+
+        .offer-card h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .offer-card ul {
+            margin-left: 1rem;
+            list-style-type: disc;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            0% { transform: scale(0.9); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
         }
     </style>
 </head>
@@ -100,7 +129,7 @@
             </div>
             <ul class="flex space-x-4 text-sm">
                 <li><a href="#" class="hover:text-gray-300">Home</a></li>
-                <li><a href="#offers-section" class="hover:text-gray-300">Offers</a></li>
+                <li><a href="#offers" class="hover:text-gray-300">Offers</a></li>
                 <li><a href="reels.html" class="hover:text-gray-300">Reels</a></li>
                 <li><a href="#" class="hover:text-gray-300">Admins</a></li>
                 <li><a href="#" class="hover:text-gray-300">Contact</a></li>
@@ -113,9 +142,10 @@
             <div class="md:w-1/2">
                 <h1 class="text-5xl font-bold mb-4">Introducing<br>the Mystery Jokers</h1>
                 <p class="mb-4 text-gray-400 text-sm">Welcome to the ultimate meme destination! Prepare to be swept away by a captivating collection of the internet's most hilarious and viral content. Immerse yourself in a world of laughter</p>
-                <button class="bg-white text-black px-6 py-2 rounded text-sm hover:bg-gray-200">Explore Now</button>
+                <button onclick="document.getElementById('offers').scrollIntoView({ behavior: 'smooth' });" class="bg-white text-black px-6 py-2 rounded text-sm hover:bg-gray-200">Explore Now</button>
             </div>
 
+            <!-- Orbiting Images Section -->
             <div class="md:w-1/2 mt-8 md:mt-0 flex justify-end">
                 <div class="orbit-container">
                     <a href="https://www.instagram.com/mystery___joker/" target="_blank">
@@ -141,26 +171,21 @@
         </div>
 
         <!-- Offers Section -->
-        <section id="offers-section" class="mt-16">
-            <div class="floating-box text-center p-8">
-                <h2 class="text-4xl font-bold mb-4">Exclusive Offers</h2>
-                <p class="text-gray-300 mb-6">Get 6 reels with a total of 500k views for just ₹70—Money Back Guarantee if it doesn't work!</p>
-                <p class="text-gray-400 mb-4">
-                    Take your brand or page to the next level with engaging, high-quality meme-based reels crafted by an experienced creator. Each package delivers 6 unique reels tailored to hit a combined 500,000 views. If the target isn't achieved, you get a full refund—no questions asked!
-                </p>
-                <div class="text-left text-gray-400">
-                    <h3 class="text-xl font-bold mb-2">Personalized Reel Packages:</h3>
-                    <ul class="list-disc list-inside mb-4">
-                        <li>Basic: 6 reels, 500k views – ₹70</li>
-                        <li>Premium: 10 reels, 1M views – ₹150</li>
-                    </ul>
-                    <h3 class="text-xl font-bold mb-2">Subscription Model:</h3>
-                    <p>20 reels/month for ₹250, with an estimated total of 2M views. If the target isn't achieved, a partial refund will be provided based on performance.</p>
-                    <h3 class="text-xl font-bold mb-2 mt-4">One-Time Purchase:</h3>
-                    <p>Clients can buy access to the entire library and enjoy new templates added daily.</p>
-                </div>
+        <div id="offers" class="offers-container mt-20">
+            <h2>Exclusive Offers</h2>
+            <p>Get 6 reels with a total of 500k views for just ₹70—Money Back Guarantee if it doesn't work!</p>
+            <div class="offer-card">
+                <h3>Personalized Reel Packages</h3>
+                <ul>
+                    <li>Basic: 6 reels, 500k views – ₹70</li>
+                    <li>Premium: 10 reels, 1M views – ₹150</li>
+                </ul>
             </div>
-        </section>
+            <div class="offer-card">
+                <h3>Subscription Model</h3>
+                <p>20 reels/month for ₹250, with an estimated total of 2M views.</p>
+            </div>
+        </div>
     </main>
 </body>
 </html>
